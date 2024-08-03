@@ -1788,10 +1788,15 @@ array-unique@^0.3.2:
   resolved "https://registry.npmmirror.com/array-unique/-/array-unique-0.3.2.tgz"
   integrity sha512-SleRWjh9JUud2wH1hPs9rZBZ33H6T9HOiL0uwGnGx9FpE6wKGyfWugmbkEOIs6qWrZhg0LWeLziLrEwQJhs5mQ==
 
-artplayer@^4.6.1:
-  version "4.6.2"
-  resolved "https://registry.npmmirror.com/artplayer/-/artplayer-4.6.2.tgz#d56c2887c10086f339722e025e9ece881561aaa9"
-  integrity sha512-9RMfFFy2wGgHUCnrwk+M2Z5OiLWQcBL+YzkSBwSi6IuJG6oM+TlfJJZt09RL2iag6DNQ+AUYtB879WUHxbqfIQ==
+artplayer-plugin-danmuku@^5.1.4:
+  version "5.1.4"
+  resolved "https://registry.npmmirror.com/artplayer-plugin-danmuku/-/artplayer-plugin-danmuku-5.1.4.tgz#a8ee5e67cf719335c9496c0f3d5c3a2b33face45"
+  integrity sha512-f2gJ9HsvSmOwg6UdNcWCUkSI6WmfkTiQKVDWr+pRJF9jQ2wK8c4YjNJ11SY63H5OGlaJBSvWWyNVdFHOX7pUbg==
+
+artplayer@^5.1.6:
+  version "5.1.6"
+  resolved "https://registry.npmmirror.com/artplayer/-/artplayer-5.1.6.tgz#ea930e23251aa69bf34efbe5c195ccec3c92e7ad"
+  integrity sha512-cqnVVLKCKWCryKl6Pmop50/Di9IQwOeNNQs5qWGzJDPiM0qTC7Q/Enusa+8JQid8p09fvp4Vc32ViSSYutdEeQ==
   dependencies:
     option-validator "^2.0.6"
 

@@ -235,6 +235,8 @@ let prevVideoIcon = '<i class="art-icon art-icon-prev-video" style="transform: s
 import Mpegts from "mpegts.js";
 
 import Hls from 'hls.js';
+import { bilibiliDanmuParseFromXml } from '~/utils/player/player'
+import { add_danmu } from '~/utils/player/danmu'
 
 const autoPlayNextVideo = useStorage('zfile-video-auto-player-next', false);
 const autoPlayVideo = useStorage('zfile-video-auto-player', false);
@@ -394,6 +396,31 @@ const initArtPlayer = async (name, url) => {
       }
     ],
     controls: [
+			{
+				position: 'right',
+				html: '上传弹幕',
+				click: function () {
+					const input = document.createElement("input");
+					input.type = "file";
+					input.accept = "text/xml";
+					input.addEventListener("change", () => {
+						const reader = new FileReader();
+						reader.onload = () => {
+							// console.log(reader)
+							const xml = reader.result;
+							// console.log(xml)
+							let dm = bilibiliDanmuParseFromXml(xml)
+							console.log(dm)
+							art.plugins.artplayerPluginDanmuku.config({
+								danmuku: dm,
+							});
+							art.plugins.artplayerPluginDanmuku.load();
+						};
+						reader.readAsText(input.files[0]);
+					});
+					input.click();
+				},
+			},
       {
         position: 'right',
         html: hiddenTools.value ? hiddenIcon : notHiddenIcon,
@@ -438,6 +465,8 @@ const initArtPlayer = async (name, url) => {
   }
 
   art = new Artplayer(options);
+
+	add_danmu(art)
 
   // art.on('error', (count) => {
   // 	if (count === 5) {
